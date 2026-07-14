@@ -65,4 +65,4 @@ streamlit run app.py
 
 ## 👩‍💻 Author
 
-**Akshitha Salvoju**
+**   Sai Akshitha Salvoju**
