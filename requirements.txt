@@ -1,0 +1,7 @@
+streamlit
+plotly
+bcrypt
+pandas
+openpyxl
+python-dotenv
+google-genai

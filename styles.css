@@ -1,0 +1,593 @@
+/* styles.css - Custom stylesheet for Smart Campus AI */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-glow: radial-gradient(rgba(37, 99, 235, 0.15), rgba(37, 99, 235, 0));
+  --secondary-glow: linear-gradient(to bottom right, rgba(14, 165, 233, 0.1), rgba(14, 165, 233, 0.03));
+}
+
+/* Global Font Override */
+.stApp, .stApp * {
+  font-family: 'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+/* ---------------------------------------------------------------------------
+   Auth pages (Login/Register)
+   --------------------------------------------------------------------------- */
+.auth-card {
+  text-align: center;
+  padding: 24px 0 16px 0;
+}
+
+.auth-logo {
+  font-size: 3.5rem;
+  margin-bottom: 8px;
+  animation: bounce 2s infinite alternate;
+}
+
+.auth-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #F8FAFC;
+  background: linear-gradient(135deg, #3B82F6 0%, #0EA5E9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 4px;
+}
+
+.auth-subtitle {
+  font-size: 0.95rem;
+  color: #94A3B8;
+  margin-bottom: 24px;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #CBD5E1;
+  margin-bottom: 6px;
+  margin-top: 12px;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #64748B;
+  margin: 16px 0;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.auth-divider:not(:empty)::before {
+  margin-right: .5em;
+}
+
+.auth-divider:not(:empty)::after {
+  margin-left: .5em;
+}
+
+.auth-divider span {
+  font-size: 0.8rem;
+}
+
+.demo-info {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px dashed rgba(59, 130, 246, 0.3);
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #94A3B8;
+  margin-top: 20px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ---------------------------------------------------------------------------
+   Sidebar
+   --------------------------------------------------------------------------- */
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  padding: 8px 4px 16px 4px;
+  gap: 12px;
+}
+
+.logo-icon {
+  font-size: 2.2rem;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.5px;
+}
+
+.logo-subtitle {
+  font-size: 0.75rem;
+  color: #38BDF8;
+  font-weight: 500;
+}
+
+.sidebar-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  margin: 14px 0;
+}
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  gap: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.sidebar-avatar {
+  font-size: 1.5rem;
+  background: rgba(37, 99, 235, 0.2);
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.sidebar-user-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sidebar-user-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #F8FAFC;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-user-dept {
+  font-size: 0.72rem;
+  color: #94A3B8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-footer {
+  text-align: center;
+  padding-top: 24px;
+}
+
+.sidebar-version {
+  font-size: 0.7rem;
+  color: #64748B;
+}
+
+.sidebar-copy {
+  font-size: 0.65rem;
+  color: #475569;
+}
+
+/* ---------------------------------------------------------------------------
+   Topbar
+   --------------------------------------------------------------------------- */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  padding: 16px 24px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+}
+
+.topbar-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.topbar-greeting {
+  font-size: 0.85rem;
+  color: #94A3B8;
+  margin-top: 2px;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.topbar-date {
+  font-size: 0.85rem;
+  color: #38BDF8;
+  font-weight: 500;
+  background: rgba(14, 165, 233, 0.1);
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(14, 165, 233, 0.15);
+}
+
+/* ---------------------------------------------------------------------------
+   Cards & Layout Components
+   --------------------------------------------------------------------------- */
+.card-header {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.metric-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.metric-icon {
+  font-size: 2rem;
+  background: rgba(255, 255, 255, 0.04);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.metric-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-label {
+  font-size: 0.8rem;
+  color: #94A3B8;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metric-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.metric-delta {
+  font-size: 0.72rem;
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+.info-card {
+  background: rgba(14, 165, 233, 0.03);
+  border: 1px solid rgba(14, 165, 233, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.info-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.info-icon {
+  font-size: 1.1rem;
+}
+
+.info-title {
+  font-weight: 600;
+  color: #E2E8F0;
+}
+
+.info-body {
+  font-size: 0.85rem;
+  color: #94A3B8;
+  line-height: 1.5;
+}
+
+/* ---------------------------------------------------------------------------
+   Announcements UI
+   --------------------------------------------------------------------------- */
+.announcement-item {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: background-color 0.2s;
+}
+
+.announcement-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.ann-badge {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 4px;
+  width: fit-content;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.ann-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #F1F5F9;
+  line-height: 1.4;
+}
+
+.ann-date {
+  font-size: 0.72rem;
+  color: #64748B;
+  margin-top: 4px;
+}
+
+.announcement-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.ann-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ann-cat-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+
+.ann-card-date {
+  font-size: 0.75rem;
+  color: #64748B;
+}
+
+.ann-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #F8FAFC;
+  margin-bottom: 8px;
+}
+
+.ann-card-desc {
+  font-size: 0.9rem;
+  color: #94A3B8;
+  line-height: 1.5;
+}
+
+/* ---------------------------------------------------------------------------
+   Classes / Timetable
+   --------------------------------------------------------------------------- */
+.class-item {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-left: 3px solid #0EA5E9;
+  border-radius: 0 10px 10px 0;
+  margin-bottom: 10px;
+}
+
+.class-time {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #38BDF8;
+}
+
+.class-subject {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #F1F5F9;
+  margin-top: 2px;
+}
+
+.class-faculty {
+  font-size: 0.72rem;
+  color: #64748B;
+  margin-top: 2px;
+}
+
+.timetable-day-header {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #F8FAFC;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding-bottom: 6px;
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
+
+/* ---------------------------------------------------------------------------
+   Assignments UI
+   --------------------------------------------------------------------------- */
+.assignment-detail {
+  padding: 4px 0 10px 0;
+}
+
+.assign-row {
+  font-size: 0.85rem;
+  color: #94A3B8;
+  margin-bottom: 8px;
+}
+
+.assign-status-row {
+  margin-bottom: 12px;
+}
+
+.assign-desc {
+  font-size: 0.9rem;
+  color: #E2E8F0;
+  line-height: 1.5;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+/* ---------------------------------------------------------------------------
+   AI Suggestions
+   --------------------------------------------------------------------------- */
+.ai-suggestion {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(99, 102, 241, 0.04);
+  border: 1px solid rgba(99, 102, 241, 0.08);
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.suggestion-icon {
+  font-size: 1.15rem;
+}
+
+.suggestion-text {
+  font-size: 0.85rem;
+  color: #E2E8F0;
+  line-height: 1.4;
+}
+
+/* ---------------------------------------------------------------------------
+   Profile UI
+   --------------------------------------------------------------------------- */
+.profile-avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+
+.profile-avatar-large {
+  font-size: 3.5rem;
+  background: rgba(37, 99, 235, 0.15);
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid rgba(37, 99, 235, 0.3);
+  margin-bottom: 16px;
+}
+
+.profile-name-large {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #F8FAFC;
+}
+
+.profile-dept {
+  font-size: 0.82rem;
+  color: #0EA5E9;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.profile-id {
+  font-size: 0.78rem;
+  color: #64748B;
+  margin-top: 2px;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.profile-field {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+}
+
+.field-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.field-value {
+  font-size: 0.95rem;
+  color: #E2E8F0;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-6px); }
+}

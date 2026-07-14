@@ -1,0 +1,44 @@
+[
+  {
+    "id": "d66d4413-dac0-48f3-95b7-360659f62e21",
+    "title": "Mid-Semester Examinations Schedule Released",
+    "description": "The examination committee has released the mid-semester examination schedule. Students are advised to check their respective department notice boards and the official portal.",
+    "category": "Exam",
+    "date": "2026-07-10T09:00:00"
+  },
+  {
+    "id": "8bd847dd-4a1e-4573-9bb4-9c51e4fdd586",
+    "title": "Annual Tech Fest 2026 – Registrations Open",
+    "description": "TechFusion 2026 registrations are now open! Participate in hackathons, paper presentations, robotics competitions, and much more. Register before 20 July 2026.",
+    "category": "Event",
+    "date": "2026-07-08T10:30:00"
+  },
+  {
+    "id": "bd13ece3-9a1f-4b99-aca4-0dee2907c2e4",
+    "title": "Library Extended Hours During Exam Week",
+    "description": "The central library will remain open 24/7 during the exam week (14–21 July 2026). All students with valid ID cards may access the reading halls.",
+    "category": "General",
+    "date": "2026-07-07T08:00:00"
+  },
+  {
+    "id": "71c0c2fa-efa3-4138-9806-a69c78494916",
+    "title": "Campus Placement Drive – Amazon & Microsoft",
+    "description": "Amazon and Microsoft will conduct their on-campus placement drives on 25 July 2026. Eligible students (CGPA ≥ 7.0) must register through the placement portal by 18 July.",
+    "category": "Placement",
+    "date": "2026-07-06T11:00:00"
+  },
+  {
+    "id": "af27a7ab-fb4c-4abc-abce-f0a57ed2249e",
+    "title": "New AI Lab Inauguration",
+    "description": "The state-of-the-art AI & Machine Learning laboratory equipped with 50 GPU workstations will be inaugurated on 16 July 2026 by the Vice Chancellor.",
+    "category": "Infrastructure",
+    "date": "2026-07-05T14:00:00"
+  },
+  {
+    "id": "5c060eeb-8acd-48b1-9b0f-08ea9129b0ef",
+    "title": "Test Announcement",
+    "description": "This is a test announcement description",
+    "category": "General",
+    "date": "2026-07-15T00:48:51.319924"
+  }
+]

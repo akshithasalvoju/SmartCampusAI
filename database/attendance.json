@@ -1,0 +1,17 @@
+[
+  {
+    "student_id": "CS2021001",
+    "attendance_percentage": 87.5,
+    "log": []
+  },
+  {
+    "student_id": "CS2021002",
+    "attendance_percentage": 92.3,
+    "log": []
+  },
+  {
+    "student_id": "CS2021003",
+    "attendance_percentage": 74.8,
+    "log": []
+  }
+]

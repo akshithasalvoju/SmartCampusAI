@@ -1,0 +1,252 @@
+[
+  {
+    "id": "1a8b5c9b-8d56-4963-9907-7cacc5075876",
+    "department": "Computer Science & Engineering",
+    "day": "Monday",
+    "start_time": "09:00",
+    "end_time": "10:00",
+    "subject": "Data Structures",
+    "faculty": "Dr. Ramesh Kumar",
+    "room": "LH-101"
+  },
+  {
+    "id": "e4a36a6e-a670-4bcd-8ef1-2fb07898e47e",
+    "department": "Computer Science & Engineering",
+    "day": "Monday",
+    "start_time": "10:00",
+    "end_time": "11:00",
+    "subject": "Operating Systems",
+    "faculty": "Prof. Sunita Sharma",
+    "room": "LH-102"
+  },
+  {
+    "id": "5f433f6c-2a0a-4c05-9b13-e793bdb10781",
+    "department": "Computer Science & Engineering",
+    "day": "Monday",
+    "start_time": "11:15",
+    "end_time": "12:15",
+    "subject": "DBMS",
+    "faculty": "Dr. Arun Verma",
+    "room": "LH-103"
+  },
+  {
+    "id": "56fc9839-b18a-4e05-9b60-ab0b731bb9cf",
+    "department": "Computer Science & Engineering",
+    "day": "Monday",
+    "start_time": "12:15",
+    "end_time": "13:15",
+    "subject": "Computer Networks",
+    "faculty": "Prof. Meera Pillai",
+    "room": "LH-104"
+  },
+  {
+    "id": "95bb8805-8c28-4141-822b-e0151c1d6cb3",
+    "department": "Computer Science & Engineering",
+    "day": "Monday",
+    "start_time": "14:00",
+    "end_time": "15:00",
+    "subject": "Machine Learning",
+    "faculty": "Dr. Vikram Singh",
+    "room": "LH-105"
+  },
+  {
+    "id": "78067fa7-8211-4b1e-952a-75c811218c26",
+    "department": "Computer Science & Engineering",
+    "day": "Tuesday",
+    "start_time": "09:00",
+    "end_time": "10:00",
+    "subject": "Data Structures",
+    "faculty": "Dr. Ramesh Kumar",
+    "room": "LH-101"
+  },
+  {
+    "id": "781fdefe-8beb-413f-a105-e49bacea7dc9",
+    "department": "Computer Science & Engineering",
+    "day": "Tuesday",
+    "start_time": "10:00",
+    "end_time": "11:00",
+    "subject": "Operating Systems",
+    "faculty": "Prof. Sunita Sharma",
+    "room": "LH-102"
+  },
+  {
+    "id": "321416ef-5f12-4436-a350-bc9b3564a514",
+    "department": "Computer Science & Engineering",
+    "day": "Tuesday",
+    "start_time": "11:15",
+    "end_time": "12:15",
+    "subject": "DBMS",
+    "faculty": "Dr. Arun Verma",
+    "room": "LH-103"
+  },
+  {
+    "id": "33de6c40-b232-4e5e-8f61-8540d415272c",
+    "department": "Computer Science & Engineering",
+    "day": "Tuesday",
+    "start_time": "12:15",
+    "end_time": "13:15",
+    "subject": "Computer Networks",
+    "faculty": "Prof. Meera Pillai",
+    "room": "LH-104"
+  },
+  {
+    "id": "518895d1-31e9-4292-a618-669f5105457f",
+    "department": "Computer Science & Engineering",
+    "day": "Tuesday",
+    "start_time": "14:00",
+    "end_time": "15:00",
+    "subject": "Machine Learning",
+    "faculty": "Dr. Vikram Singh",
+    "room": "LH-105"
+  },
+  {
+    "id": "f42f2679-9e04-423e-961b-c6f028ed21a5",
+    "department": "Computer Science & Engineering",
+    "day": "Wednesday",
+    "start_time": "09:00",
+    "end_time": "10:00",
+    "subject": "Data Structures",
+    "faculty": "Dr. Ramesh Kumar",
+    "room": "LH-101"
+  },
+  {
+    "id": "3cf31625-433e-4d29-9671-332a14495434",
+    "department": "Computer Science & Engineering",
+    "day": "Wednesday",
+    "start_time": "10:00",
+    "end_time": "11:00",
+    "subject": "Operating Systems",
+    "faculty": "Prof. Sunita Sharma",
+    "room": "LH-102"
+  },
+  {
+    "id": "d741e545-d8c4-4fb7-80e7-72c308b8db34",
+    "department": "Computer Science & Engineering",
+    "day": "Wednesday",
+    "start_time": "11:15",
+    "end_time": "12:15",
+    "subject": "DBMS",
+    "faculty": "Dr. Arun Verma",
+    "room": "LH-103"
+  },
+  {
+    "id": "caac4931-f9b7-46ea-9991-d8e8e28adfbc",
+    "department": "Computer Science & Engineering",
+    "day": "Wednesday",
+    "start_time": "12:15",
+    "end_time": "13:15",
+    "subject": "Computer Networks",
+    "faculty": "Prof. Meera Pillai",
+    "room": "LH-104"
+  },
+  {
+    "id": "f6dd18f9-3936-4948-be28-362bc74143a2",
+    "department": "Computer Science & Engineering",
+    "day": "Wednesday",
+    "start_time": "14:00",
+    "end_time": "15:00",
+    "subject": "Machine Learning",
+    "faculty": "Dr. Vikram Singh",
+    "room": "LH-105"
+  },
+  {
+    "id": "c0d3aa6b-5964-4f6c-8484-aa58f8b18646",
+    "department": "Computer Science & Engineering",
+    "day": "Thursday",
+    "start_time": "09:00",
+    "end_time": "10:00",
+    "subject": "Data Structures",
+    "faculty": "Dr. Ramesh Kumar",
+    "room": "LH-101"
+  },
+  {
+    "id": "c0efdfcc-dcb2-4db3-bdc9-9931cbb40875",
+    "department": "Computer Science & Engineering",
+    "day": "Thursday",
+    "start_time": "10:00",
+    "end_time": "11:00",
+    "subject": "Operating Systems",
+    "faculty": "Prof. Sunita Sharma",
+    "room": "LH-102"
+  },
+  {
+    "id": "401b3f48-12ee-429e-a119-c788850857cc",
+    "department": "Computer Science & Engineering",
+    "day": "Thursday",
+    "start_time": "11:15",
+    "end_time": "12:15",
+    "subject": "DBMS",
+    "faculty": "Dr. Arun Verma",
+    "room": "LH-103"
+  },
+  {
+    "id": "abeb5bbb-d31c-4804-b202-75626a79b805",
+    "department": "Computer Science & Engineering",
+    "day": "Thursday",
+    "start_time": "12:15",
+    "end_time": "13:15",
+    "subject": "Computer Networks",
+    "faculty": "Prof. Meera Pillai",
+    "room": "LH-104"
+  },
+  {
+    "id": "24c36036-d1b5-4b35-ab99-057e3db53e19",
+    "department": "Computer Science & Engineering",
+    "day": "Thursday",
+    "start_time": "14:00",
+    "end_time": "15:00",
+    "subject": "Machine Learning",
+    "faculty": "Dr. Vikram Singh",
+    "room": "LH-105"
+  },
+  {
+    "id": "649f7ca3-d0b1-4a49-8930-32426afb52c5",
+    "department": "Computer Science & Engineering",
+    "day": "Friday",
+    "start_time": "09:00",
+    "end_time": "10:00",
+    "subject": "Data Structures",
+    "faculty": "Dr. Ramesh Kumar",
+    "room": "LH-101"
+  },
+  {
+    "id": "7cd94f71-c258-4c91-a9f8-74da1716ef4f",
+    "department": "Computer Science & Engineering",
+    "day": "Friday",
+    "start_time": "10:00",
+    "end_time": "11:00",
+    "subject": "Operating Systems",
+    "faculty": "Prof. Sunita Sharma",
+    "room": "LH-102"
+  },
+  {
+    "id": "af81b368-4720-4038-99ae-f2e0e3d665d2",
+    "department": "Computer Science & Engineering",
+    "day": "Friday",
+    "start_time": "11:15",
+    "end_time": "12:15",
+    "subject": "DBMS",
+    "faculty": "Dr. Arun Verma",
+    "room": "LH-103"
+  },
+  {
+    "id": "26cbad00-d143-4002-a59c-e49b963f9702",
+    "department": "Computer Science & Engineering",
+    "day": "Friday",
+    "start_time": "12:15",
+    "end_time": "13:15",
+    "subject": "Computer Networks",
+    "faculty": "Prof. Meera Pillai",
+    "room": "LH-104"
+  },
+  {
+    "id": "6bc9a8a6-2de3-4cec-a858-8e5da65a4dbe",
+    "department": "Computer Science & Engineering",
+    "day": "Friday",
+    "start_time": "14:00",
+    "end_time": "15:00",
+    "subject": "Machine Learning",
+    "faculty": "Dr. Vikram Singh",
+    "room": "LH-105"
+  }
+]
