@@ -65,6 +65,7 @@ def get_ai_response(user_message: str, user_email: str = "") -> str:
 
     try:
         from google import genai
+        # pyrefly: ignore [missing-import]
         from google.genai import types
 
         client = genai.Client(api_key=GEMINI_API_KEY)
@@ -136,6 +137,86 @@ def get_ai_response(user_message: str, user_email: str = "") -> str:
             return f"❌ **An error occurred:** {error_msg}"
 
 
+def get_ai_response_stream(user_message: str, user_email: str = ""):
+    """
+    Send *user_message* to the Google Gemini API and yield response text chunk by chunk.
+
+    Parameters
+    ----------
+    user_message : str
+        The student's query.
+    user_email : str
+        Used to key the chat history. Pass empty string for anonymous.
+    """
+    if not GEMINI_API_KEY:
+        yield (
+            "⚠️ **Gemini API key is not configured.**\n\n"
+            "Please add `GEMINI_API_KEY=your_key` to your `.env` file "
+            "and restart the application."
+        )
+        return
+
+    try:
+        from google import genai
+        from google.genai import types
+
+        client = genai.Client(api_key=GEMINI_API_KEY)
+
+        contents = []
+
+        if user_email:
+            history = get_chat_history(user_email, limit=10)
+            for entry in history[-5:]:
+                contents.append(
+                    types.Content(
+                        role="user",
+                        parts=[types.Part.from_text(text=entry.get("question", ""))]
+                    )
+                )
+                contents.append(
+                    types.Content(
+                        role="model",
+                        parts=[types.Part.from_text(text=entry.get("answer", ""))]
+                    )
+                )
+
+        contents.append(
+            types.Content(
+                role="user",
+                parts=[types.Part.from_text(text=user_message)]
+            )
+        )
+
+        response_stream = client.models.generate_content_stream(
+            model=GEMINI_MODEL,
+            contents=contents,
+            config=types.GenerateContentConfig(
+                system_instruction=SYSTEM_PROMPT,
+                temperature=0.7,
+                max_output_tokens=1024,
+            ),
+        )
+
+        for chunk in response_stream:
+            yield chunk.text or ""
+
+    except ImportError:
+        yield (
+            "❌ The `google-genai` package is not installed.\n\n"
+            "Run: `pip install google-genai`"
+        )
+    except Exception as exc:  # noqa: BLE001
+        error_msg = str(exc)
+        if "authentication" in error_msg.lower() or "api key" in error_msg.lower() or "api_key" in error_msg.lower() or "api-key" in error_msg.lower():
+            yield "🔑 **Invalid API key.** Please check your `GEMINI_API_KEY` in the `.env` file."
+        elif "rate limit" in error_msg.lower() or "429" in error_msg.lower():
+            yield "⏳ **Rate limit reached.** Please wait a moment and try again."
+        elif "model" in error_msg.lower() or "not found" in error_msg.lower():
+            yield f"🤖 **Model error.** The model `{GEMINI_MODEL}` may not be available on your account. Try changing `GEMINI_MODEL` in your `.env` file."
+        else:
+            yield f"❌ **An error occurred:** {error_msg}"
+
+
 def build_chat_interface(user_email: str) -> None:
     """
     Render the full chat UI inside the calling page.
@@ -177,11 +258,14 @@ def build_chat_interface(user_email: str) -> None:
         with st.chat_message("user", avatar="👤"):
             st.markdown(prompt)
 
-        # Get and display AI response
+        # Get and display AI response in real time
         with st.chat_message("assistant", avatar="🤖"):
-            with st.spinner("Thinking…"):
-                response = get_ai_response(prompt, user_email)
-            st.markdown(response)
+            response = st.write_stream(get_ai_response_stream(prompt, user_email))
 
         st.session_state["chat_messages"].append({"role": "assistant", "content": response})
+
+        # Save to DB if not an error message
+        if user_email and response and not response.startswith(("⚠️", "❌", "🔑", "⏳", "🤖")):
+            save_chat_message(user_email, prompt, response)
+
         st.rerun()

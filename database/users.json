@@ -24,5 +24,18 @@
     "avatar": null,
     "bio": "Hello World!",
     "theme": "dark"
+  },
+  {
+    "id": "79aa38a0-edfb-4a63-b102-4b1efe6a37af",
+    "name": "akshitha",
+    "email": "amullu@gmail.com",
+    "phone": "6305697199",
+    "student_id": "EC202351",
+    "department": "Computer Science & Engineering",
+    "password_hash": "$2b$12$7bWVOIrv7X53ddWzWwDUtufY4EeneJvcVPiIjiEM0aQI7KAmEQbx.",
+    "created_at": "2026-07-20T16:39:02.747136",
+    "avatar": null,
+    "bio": "",
+    "theme": "dark"
   }
 ]

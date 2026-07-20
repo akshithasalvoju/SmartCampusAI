@@ -13,7 +13,9 @@ from datetime import datetime, date
 from typing import Any
 
 import streamlit as st
+# pyrefly: ignore [missing-import]
 import plotly.graph_objects as go
+# pyrefly: ignore [missing-import]
 import plotly.express as px
 import pandas as pd
 
@@ -110,35 +112,31 @@ def metric_card(
         if delta
         else ""
     )
-    st.markdown(
-        f"""
-        <div class="metric-card" style="border-left: 4px solid {color};">
-            <div class="metric-icon">{icon}</div>
-            <div class="metric-content">
-                <div class="metric-label">{label}</div>
-                <div class="metric-value" style="color:{color};">{value}</div>
-                {delta_html}
-            </div>
-        </div>
-        """,
-        unsafe_allow_html=True,
+    card_html = (
+        f'<div class="metric-card" style="border-left: 4px solid {color};">'
+        f'<div class="metric-icon">{icon}</div>'
+        f'<div class="metric-content">'
+        f'<div class="metric-label">{label}</div>'
+        f'<div class="metric-value" style="color:{color};">{value}</div>'
+        f'{delta_html}'
+        f'</div>'
+        f'</div>'
     )
+    st.markdown(card_html, unsafe_allow_html=True)
 
 
 def info_card(title: str, body: str, icon: str = "ℹ️") -> None:
     """Render a simple info card."""
-    st.markdown(
-        f"""
-        <div class="info-card">
-            <div class="info-card-header">
-                <span class="info-icon">{icon}</span>
-                <span class="info-title">{title}</span>
-            </div>
-            <div class="info-body">{body}</div>
-        </div>
-        """,
-        unsafe_allow_html=True,
+    card_html = (
+        f'<div class="info-card">'
+        f'<div class="info-card-header">'
+        f'<span class="info-icon">{icon}</span>'
+        f'<span class="info-title">{title}</span>'
+        f'</div>'
+        f'<div class="info-body">{body}</div>'
+        f'</div>'
     )
+    st.markdown(card_html, unsafe_allow_html=True)
 
 
 def badge(text: str, color: str = COLOR_PRIMARY) -> str:

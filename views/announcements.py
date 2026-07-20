@@ -47,23 +47,21 @@ def render_announcements() -> None:
             for ann in announcements:
                 cat = ann.get("category", "General")
                 cfg = CATEGORY_CONFIG.get(cat, {"icon": "📢", "color": COLOR_PRIMARY})
-                st.markdown(
-                    f"""
-                    <div class="announcement-card" style="border-left:4px solid {cfg['color']};">
-                        <div class="ann-card-header">
-                            <span class="ann-cat-badge" style="background:{cfg['color']};">
-                                {cfg['icon']} {cat}
-                            </span>
-                            <span class="ann-card-date">
-                                📅 {format_datetime(ann.get('date',''), '%d %b %Y, %I:%M %p')}
-                            </span>
-                        </div>
-                        <div class="ann-card-title">{ann.get('title','')}</div>
-                        <div class="ann-card-desc">{ann.get('description','')}</div>
-                    </div>
-                    """,
-                    unsafe_allow_html=True,
+                ann_html = (
+                    f'<div class="announcement-card" style="border-left:4px solid {cfg["color"]};">'
+                    f'<div class="ann-card-header">'
+                    f'<span class="ann-cat-badge" style="background:{cfg["color"]};">'
+                    f'{cfg["icon"]} {cat}'
+                    f'</span>'
+                    f'<span class="ann-card-date">'
+                    f"📅 {format_datetime(ann.get('date',''), '%d %b %Y, %I:%M %p')}"
+                    f'</span>'
+                    f'</div>'
+                    f'<div class="ann-card-title">{ann.get("title","")}</div>'
+                    f'<div class="ann-card-desc">{ann.get("description","")}</div>'
+                    f'</div>'
                 )
+                st.markdown(ann_html, unsafe_allow_html=True)
 
     # ── Add Announcement ──────────────────────────────────────────────────
     with tab_add:

@@ -91,24 +91,22 @@ def render_assignments() -> None:
                     status_html = status_badge(status)
 
                 with st.expander(f"📝 {a.get('title', 'Untitled')} — {a.get('subject', '')}", expanded=False):
-                    st.markdown(
-                        f"""
-                        <div class="assignment-detail">
-                            <div class="assign-row">
-                                <b>Subject:</b> {a.get('subject','')}
-                                &nbsp;|&nbsp;
-                                <b>Due:</b> {due}
-                                &nbsp;|&nbsp;
-                                {days_html}
-                            </div>
-                            <div class="assign-status-row">
-                                <b>Status:</b> {status_html}
-                            </div>
-                            <div class="assign-desc">{a.get('description','No description.')}</div>
-                        </div>
-                        """,
-                        unsafe_allow_html=True,
+                    card_html = (
+                        f'<div class="assignment-detail">'
+                        f'<div class="assign-row">'
+                        f'<b>Subject:</b> {a.get("subject", "")}'
+                        f'&nbsp;|&nbsp;'
+                        f'<b>Due:</b> {due}'
+                        f'&nbsp;|&nbsp;'
+                        f'{days_html}'
+                        f'</div>'
+                        f'<div class="assign-status-row">'
+                        f'<b>Status:</b> {status_html}'
+                        f'</div>'
+                        f'<div class="assign-desc">{a.get("description", "No description.")}</div>'
+                        f'</div>'
                     )
+                    st.markdown(card_html, unsafe_allow_html=True)
 
                     # Status update
                     new_status = st.selectbox(
@@ -178,7 +176,7 @@ def render_assignments() -> None:
             if not assignment_text.strip():
                 st.warning("Please paste some assignment text first.")
             else:
-                from chatbot import get_ai_response
+                from chatbot import get_ai_response_stream
 
                 prompt = (
                     f"I have the following assignment:\n\n{assignment_text}\n\n"
@@ -188,10 +186,12 @@ def render_assignments() -> None:
                     "3. Suggest any relevant resources or concepts I should study.\n"
                     "4. Estimate the time required to complete it."
                 )
-                with st.spinner("🤖 Analysing your assignment…"):
-                    response = get_ai_response(
-                        prompt, user.get("email", "")
-                    )
                 st.markdown("---")
                 st.markdown("#### 📋 AI Analysis")
-                st.markdown(response)
+                with st.chat_message("assistant", avatar="🤖"):
+                    response = st.write_stream(get_ai_response_stream(prompt, user.get("email", "")))
+
+                # Save to database if not an error message
+                if response and not response.startswith(("⚠️", "❌", "🔑", "⏳", "🤖")):
+                    from database import save_chat_message
+                    save_chat_message(user.get("email", ""), prompt, response)
